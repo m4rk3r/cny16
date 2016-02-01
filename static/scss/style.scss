@@ -1,0 +1,117 @@
+@import 'base.scss';
+
+$blue: rgb(77,86,200);
+$green:#6ECC5A;
+$red: #CC2524;
+
+html, body {
+    margin:0;
+    background-color:$red;
+}
+
+body {
+    height:5000px;
+}
+
+ul {
+    padding:0;
+
+    li {
+        list-style-type: none;
+    }
+}
+
+svg {
+    position:fixed;
+    width:100%;
+    height:100%;
+}
+
+#table-fare {
+    @include transition(opacity .33s ease-in-out);
+    position:fixed;
+    z-index:20;
+    bottom:5%;
+    left:2.5%;
+    height:75vh;
+    width:95%;
+    //opacity:0;
+
+    @include flexbox();
+    @include direction(row);
+    @include align(center);
+
+    transform-style: preserve-3d;
+
+    &.visible {
+        opacity:1;
+    }
+
+    #noods {
+        width:30%;
+
+        svg {
+            position:relative;
+            width:70%;
+            padding: 0 15%;
+            height:auto;
+
+            circle {
+                fill: $red;
+                stroke:white;
+            }
+            path {
+                stroke:white;
+            }
+            rect {
+                stroke:white;
+            }
+        }
+
+    }
+
+    #info {
+        @include flexbox();
+        @include direction(column);
+        @include justify(space-between);
+        @include align(center);
+
+        @include transform(skewX(-5deg));
+
+
+        width:30%;
+        height:90%;
+        color:#FFF;
+        margin: 0 8%;
+        padding: 0 2%;
+        text-align: center;
+
+        border:solid 1px;
+
+        h1 {
+        }
+
+        img {
+            width:25%;
+        }
+    }
+
+    #dumps {
+        width:30%;
+
+        svg {
+            position:relative;
+            width:100%;
+            height:auto;
+
+            path {
+                fill: $red;
+                stroke:white;
+            }
+            ellipse {
+                fill:$red;
+                stroke:white;
+            }
+        }
+    }
+}

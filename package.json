@@ -1,0 +1,26 @@
+{
+  "name": "cny16",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0",
+    "node": "0.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m4rk3r/cny16.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/m4rk3r/cny16#readme"
+}

@@ -1,0 +1,98 @@
+/* flexbox specs */
+html, body {
+  margin: 0;
+  background-color: #CC2524; }
+
+body {
+  height: 5000px; }
+
+ul {
+  padding: 0; }
+  ul li {
+    list-style-type: none; }
+
+svg {
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+
+#table-fare {
+  -webkit-transition: opacity 0.33s ease-in-out;
+  -moz-transition: opacity 0.33s ease-in-out;
+  -ms-transition: opacity 0.33s ease-in-out;
+  -o-transition: opacity 0.33s ease-in-out;
+  transition: opacity 0.33s ease-in-out;
+  position: fixed;
+  z-index: 20;
+  bottom: 5%;
+  left: 2.5%;
+  height: 75vh;
+  width: 95%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  transform-style: preserve-3d; }
+  #table-fare.visible {
+    opacity: 1; }
+  #table-fare #noods {
+    width: 30%; }
+    #table-fare #noods svg {
+      position: relative;
+      width: 70%;
+      padding: 0 15%;
+      height: auto; }
+      #table-fare #noods svg circle {
+        fill: #CC2524;
+        stroke: white; }
+      #table-fare #noods svg path {
+        stroke: white; }
+      #table-fare #noods svg rect {
+        stroke: white; }
+  #table-fare #info {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: skewX(-5deg);
+    -moz-transform: skewX(-5deg);
+    -ms-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    width: 30%;
+    height: 90%;
+    color: #FFF;
+    margin: 0 8%;
+    padding: 0 2%;
+    text-align: center;
+    border: solid 1px; }
+    #table-fare #info img {
+      width: 25%; }
+  #table-fare #dumps {
+    width: 30%; }
+    #table-fare #dumps svg {
+      position: relative;
+      width: 100%;
+      height: auto; }
+      #table-fare #dumps svg path {
+        fill: #CC2524;
+        stroke: white; }
+      #table-fare #dumps svg ellipse {
+        fill: #CC2524;
+        stroke: white; }
