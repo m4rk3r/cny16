@@ -124,11 +124,11 @@ $(function (){
 
         // conditional hiding
         // if(t+window.innerHeight >= bh)
-        //     tbl.addClass('visible');
+        //     bin.addClass('visible');
         // else
-        //     tbl.removeClass('visible');
+        //     bin.removeClass('visible');
     }
-    factor();
 
+    factor();
     $(document).on('scroll', factor);
 });

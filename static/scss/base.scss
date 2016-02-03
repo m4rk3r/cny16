@@ -1,4 +1,6 @@
 
+$sans:'Julius Sans One', sans-serif;
+$serif:'Maven Pro', sans-serif;
 
 @mixin transition($options...) {
     -webkit-transition: $options;
@@ -46,4 +48,67 @@
 @mixin shrink($val){
     -webkit-flex-shrink:$val;
     flex-shrink:$val;
+}
+
+/**
+ * Below from https://gist.github.com/Integralist/3931680
+ **/
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+
+/*
+    Example usage:
+    @include animation(10s, 5s, changecolour)
+ */
+@mixin animation ($delay, $duration, $animation, $easing:linear, $repeat:true) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-timing-function: $easing;
+    -webkit-animation-iteration-count: if($repeat, infinite, 1); /* this prevents the animation from restarting! */
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-timing-function: $easing;
+    -moz-animation-iteration-count: if($repeat, infinite, 1); /* this prevents the animation from restarting! */
+
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    -o-animation-timing-function: $easing;
+    -o-animation-iteration-count: if($repeat, infinite, 1); /* this prevents the animation from restarting! */
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-timing-function: $easing;
+    animation-iteration-count: if($repeat, infinite, 1); /* this prevents the animation from restarting! */
+}
+
+@include keyframe(slide) {
+    $r: 70deg;
+    0% { @include transform(rotateY($r)); }
+    50% { @include transform(rotateY(-$r)); }
+    100% { @include transform(rotateY($r)); }
+}
+
+@include keyframe(drop) {
+    0% { width: 300px;}
+    100% { width:40px; }
 }

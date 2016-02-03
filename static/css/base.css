@@ -1,1 +1,99 @@
 /* flexbox specs */
+/**
+ * Below from https://gist.github.com/Integralist/3931680
+ **/
+/*
+    Example usage:
+    @include animation(10s, 5s, changecolour)
+ */
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); }
+  50% {
+    -webkit-transform: rotateY(-70deg);
+    -moz-transform: rotateY(-70deg);
+    -ms-transform: rotateY(-70deg);
+    transform: rotateY(-70deg); }
+  100% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); } }
+
+@-moz-keyframes slide {
+  0% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); }
+  50% {
+    -webkit-transform: rotateY(-70deg);
+    -moz-transform: rotateY(-70deg);
+    -ms-transform: rotateY(-70deg);
+    transform: rotateY(-70deg); }
+  100% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); } }
+
+@-o-keyframes slide {
+  0% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); }
+  50% {
+    -webkit-transform: rotateY(-70deg);
+    -moz-transform: rotateY(-70deg);
+    -ms-transform: rotateY(-70deg);
+    transform: rotateY(-70deg); }
+  100% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); } }
+
+@keyframes slide {
+  0% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); }
+  50% {
+    -webkit-transform: rotateY(-70deg);
+    -moz-transform: rotateY(-70deg);
+    -ms-transform: rotateY(-70deg);
+    transform: rotateY(-70deg); }
+  100% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); } }
+
+@-webkit-keyframes drop {
+  0% {
+    width: 300px; }
+  100% {
+    width: 40px; } }
+
+@-moz-keyframes drop {
+  0% {
+    width: 300px; }
+  100% {
+    width: 40px; } }
+
+@-o-keyframes drop {
+  0% {
+    width: 300px; }
+  100% {
+    width: 40px; } }
+
+@keyframes drop {
+  0% {
+    width: 300px; }
+  100% {
+    width: 40px; } }

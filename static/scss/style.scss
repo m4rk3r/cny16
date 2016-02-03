@@ -29,17 +29,18 @@ svg {
 
 #table-fare {
     @include transition(opacity .33s ease-in-out);
+
+    @include flexbox();
+    @include direction(row);
+    @include align(center);
+
     position:fixed;
     z-index:20;
     bottom:5%;
     left:2.5%;
     height:75vh;
     width:95%;
-    //opacity:0;
-
-    @include flexbox();
-    @include direction(row);
-    @include align(center);
+    overflow:hidden;
 
     transform-style: preserve-3d;
 
@@ -50,20 +51,33 @@ svg {
     #noods {
         width:30%;
 
+        @include flexbox();
+        @include direction(column);
+        @include justify(space-between);
+
         svg {
+            &:first-of-type {
+                path:nth-child(3) {
+                    fill:$red;
+                }
+            }
+            &:last-of-type{
+                height:35%;
+            }
+
             position:relative;
-            width:70%;
-            padding: 0 15%;
-            height:auto;
+            height:50%;
 
             circle {
-                fill: $red;
+                fill: none;
                 stroke:white;
             }
+
             path {
                 stroke:white;
             }
-            rect {
+
+            rect,ellipse,line {
                 stroke:white;
             }
         }
@@ -76,19 +90,21 @@ svg {
         @include justify(space-between);
         @include align(center);
 
-        @include transform(skewX(-5deg));
-
-
         width:30%;
         height:90%;
         color:#FFF;
-        margin: 0 8%;
+        margin: 0 4%;
         padding: 0 2%;
         text-align: center;
 
         border:solid 1px;
 
         h1 {
+            font-family:$serif;
+        }
+
+        p {
+            font-family:$serif;
         }
 
         img {
@@ -101,13 +117,13 @@ svg {
 
         svg {
             position:relative;
-            width:100%;
-            height:auto;
+            height:100%;
+
 
             path {
-                fill: $red;
                 stroke:white;
             }
+
             ellipse {
                 fill:$red;
                 stroke:white;

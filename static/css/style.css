@@ -1,4 +1,103 @@
 /* flexbox specs */
+/**
+ * Below from https://gist.github.com/Integralist/3931680
+ **/
+/*
+    Example usage:
+    @include animation(10s, 5s, changecolour)
+ */
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); }
+  50% {
+    -webkit-transform: rotateY(-70deg);
+    -moz-transform: rotateY(-70deg);
+    -ms-transform: rotateY(-70deg);
+    transform: rotateY(-70deg); }
+  100% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); } }
+
+@-moz-keyframes slide {
+  0% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); }
+  50% {
+    -webkit-transform: rotateY(-70deg);
+    -moz-transform: rotateY(-70deg);
+    -ms-transform: rotateY(-70deg);
+    transform: rotateY(-70deg); }
+  100% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); } }
+
+@-o-keyframes slide {
+  0% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); }
+  50% {
+    -webkit-transform: rotateY(-70deg);
+    -moz-transform: rotateY(-70deg);
+    -ms-transform: rotateY(-70deg);
+    transform: rotateY(-70deg); }
+  100% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); } }
+
+@keyframes slide {
+  0% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); }
+  50% {
+    -webkit-transform: rotateY(-70deg);
+    -moz-transform: rotateY(-70deg);
+    -ms-transform: rotateY(-70deg);
+    transform: rotateY(-70deg); }
+  100% {
+    -webkit-transform: rotateY(70deg);
+    -moz-transform: rotateY(70deg);
+    -ms-transform: rotateY(70deg);
+    transform: rotateY(70deg); } }
+
+@-webkit-keyframes drop {
+  0% {
+    width: 300px; }
+  100% {
+    width: 40px; } }
+
+@-moz-keyframes drop {
+  0% {
+    width: 300px; }
+  100% {
+    width: 40px; } }
+
+@-o-keyframes drop {
+  0% {
+    width: 300px; }
+  100% {
+    width: 40px; } }
+
+@keyframes drop {
+  0% {
+    width: 300px; }
+  100% {
+    width: 40px; } }
+
 html, body {
   margin: 0;
   background-color: #CC2524; }
@@ -22,12 +121,6 @@ svg {
   -ms-transition: opacity 0.33s ease-in-out;
   -o-transition: opacity 0.33s ease-in-out;
   transition: opacity 0.33s ease-in-out;
-  position: fixed;
-  z-index: 20;
-  bottom: 5%;
-  left: 2.5%;
-  height: 75vh;
-  width: 95%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -39,22 +132,42 @@ svg {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  position: fixed;
+  z-index: 20;
+  bottom: 5%;
+  left: 2.5%;
+  height: 75vh;
+  width: 95%;
+  overflow: hidden;
   transform-style: preserve-3d; }
   #table-fare.visible {
     opacity: 1; }
   #table-fare #noods {
-    width: 30%; }
+    width: 30%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between; }
     #table-fare #noods svg {
       position: relative;
-      width: 70%;
-      padding: 0 15%;
-      height: auto; }
+      height: 50%; }
+      #table-fare #noods svg:first-of-type path:nth-child(3) {
+        fill: #CC2524; }
+      #table-fare #noods svg:last-of-type {
+        height: 35%; }
       #table-fare #noods svg circle {
-        fill: #CC2524;
+        fill: none;
         stroke: white; }
       #table-fare #noods svg path {
         stroke: white; }
-      #table-fare #noods svg rect {
+      #table-fare #noods svg rect, #table-fare #noods svg ellipse, #table-fare #noods svg line {
         stroke: white; }
   #table-fare #info {
     display: -webkit-box;
@@ -71,27 +184,25 @@ svg {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-transform: skewX(-5deg);
-    -moz-transform: skewX(-5deg);
-    -ms-transform: skewX(-5deg);
-    transform: skewX(-5deg);
     width: 30%;
     height: 90%;
     color: #FFF;
-    margin: 0 8%;
+    margin: 0 4%;
     padding: 0 2%;
     text-align: center;
     border: solid 1px; }
+    #table-fare #info h1 {
+      font-family: "Maven Pro", sans-serif; }
+    #table-fare #info p {
+      font-family: "Maven Pro", sans-serif; }
     #table-fare #info img {
       width: 25%; }
   #table-fare #dumps {
     width: 30%; }
     #table-fare #dumps svg {
       position: relative;
-      width: 100%;
-      height: auto; }
+      height: 100%; }
       #table-fare #dumps svg path {
-        fill: #CC2524;
         stroke: white; }
       #table-fare #dumps svg ellipse {
         fill: #CC2524;
