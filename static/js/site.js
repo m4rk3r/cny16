@@ -39,7 +39,8 @@ $(function (){
 
         path.attr({
             stroke:stroke,
-            fill:'none'
+            fill:'none',
+            'stroke-dasharray':"5,10"
         });
     }
 
@@ -98,7 +99,7 @@ $(function (){
         var path = tableSvg.path(p.str);
         path.attr({
             stroke:stroke,
-            fill:fill
+            fill:fill,
         });
 
         var path2 = legSvg.path(legs.str);
